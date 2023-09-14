@@ -1,0 +1,124 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    background: url('./peaceful\ sky.webp') center center/cover;
+    overflow: hidden;
+}
+.clock::before{
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%,50%);
+    border-radius: 50%;
+    background-color: rgb(232, 156, 156);
+    border: 2px solid rgb(252, 5, 5);
+    z-index: 10;
+}
+.clock{
+    position: relative;
+    display: flex;
+    /* background-color: rgb(24, 27, 27); */
+    background: #e5fcff;
+    /* background: white  ; */
+    text-align: center;
+    height: 60vh;
+    width: 60vh;
+    border-radius: 50%;
+    /* border: 3px solid rgb(236, 253, 4); */
+    border: 3px solid rgb(200, 217, 235);
+}
+.num{
+    --rotate: 0;
+    position: absolute;
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    border-radius: 50% ;
+    font-weight: 600;
+    color: black;
+    /* color: white; */
+    
+    transform: rotate(var(--rotate));
+    font-size: 1.2rem;
+}
+.num1{--rotate:30deg}
+.num2{--rotate:60deg}
+.num3{--rotate:90deg}
+.num4{--rotate:120deg}
+.num5{--rotate:150deg}
+.num6{--rotate:180deg}
+.num7{--rotate:210deg}
+.num8{--rotate:240deg}
+.num9{--rotate:270deg}
+.num10{--rotate:300deg}
+.num11{--rotate:330deg}
+.hand{
+    --rotate: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotate)*1deg));
+    
+
+
+}
+.second{
+
+    height: 45%;
+    width: 3px;
+    background-color: red;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    
+}
+.minute{
+    height: 38%;
+    width: 5px;
+    background-color: yellow;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    
+}
+.hour{
+    height: 30%;
+    width: 9px;
+    background-color: rgb(44, 11, 236);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+@media (width <= 500px){
+    .clock{
+        height: 90vw;
+        width: 90vw;
+    }
+    .num{
+        font-weight: normal;
+    }
+}
+/* @media (width < 250px)
+{
+    .hour{
+        width: ;
+    }
+    .minute{
+        width: ;
+    }
+    .second{
+        width: ;
+    }
+} */
